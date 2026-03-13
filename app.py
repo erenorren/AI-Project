@@ -30,9 +30,47 @@ def hitung_fuzzy(suhu, hari):
     penyebut = sum([r[0] for r in rules])
     return pembilang / penyebut if penyebut != 0 else 0
 
+# Dark/Light mode sistem user
+custom_css = """
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Shadows+Into+Light&display=swap');
+
+html, body, [class*="css"]  {
+    font-family: 'Epunda Slab', cursive !important;
+}
+
+h1, h2, h3 {
+    font-family: 'Epunda Slab', cursive !important;
+}
+
+.stApp {
+    font-size: 18px;
+}
+
+div.stButton > button {
+    background-color: #F4A6A6 !important;
+    color: white !important;
+    border-radius: 20px !important;
+    border: none !important;
+    font-weight: bold;
+}
+
+label, .stSlider {
+    color: inherit !important;
+}
+
+h1 {
+    color: #6C8EBF !important;
+}
+</style>
+"""
+
+# Terapkan CSS
+st.markdown(custom_css, unsafe_allow_html=True)
+
 # --- TAMPILAN UI ---
-st.set_page_config(page_title="Yogurt Freshness AI", page_icon="🐮")
-st.title("🐮 Yogurt Freshness AI")
+st.set_page_config(page_title="Yogurt AI", page_icon="🐮")
+st.title("🐮 Yogurt AI")
 st.write("Cek kelayakan yogurtmu dengan bantuan AI kami!")
 
 suhu = st.slider("Suhu Penyimpanan (°C)", 0, 30, 22)
