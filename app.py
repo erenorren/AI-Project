@@ -119,7 +119,7 @@ st.caption("Sistem Kelayakan Yogurt Berbasis Fuzzy Logic - Tim 1 Sistem Informas
 
 # Sidebar untuk Profile Tim
 with st.sidebar:
-    st.image("https://upload.wikimedia.org/wikipedia/commons/0/00/Logo_Universitas_Tanjungpura.png", width=100)
+    st.image("https://id.wikipedia.org/wiki/Berkas:Lambang_Universitas_Tanjungpura.png", width=100)
     st.header("Profile Tim 1")
     st.markdown("""
     - **Regisha Sheren** (H1101241036)
