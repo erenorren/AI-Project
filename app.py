@@ -114,6 +114,7 @@ def hitung_kelayakan(suhu, hari):
     else:
         status = "Sudah Basi"
         emoji = "🤮"
+    return z_result, status, emoji
 
 # --- UI APLIKASI ---
 st.title("🍦 Yogurt Check")
