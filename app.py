@@ -1,14 +1,13 @@
 import streamlit as st
 import pandas as pd
 
-# --- KONFIGURASI HALAMAN ---
 st.set_page_config(
     page_title="Yogurt Check - Tim 1 Kecerdasan Buatan A",
     page_icon="🍦",
     layout="centered"
 )
 
-# --- STYLE CSS ---
+# STYLE CSS 
 st.markdown("""
     <style>
     .main {
@@ -118,7 +117,7 @@ def hitung_kelayakan(suhu, hari):
 
 # --- UI APLIKASI ---
 st.title("🍦 Yogurt Check")
-st.caption("Sistem Kelayakan Yogurt Berbasis Fuzzy Logic - Tim 1 Sistem Informasi UNTAN")
+st.caption("Sistem Kelayakan Yogurt Berbasis Fuzzy Logic - Tim 1 Kecerdasan Buatan A")
 
 # Sidebar
 with st.sidebar:
@@ -165,7 +164,7 @@ with tabs[0]:
             st.error("Jangan dimakan! Yogurt sudah rusak.")
 
 with tabs[1]:
-    st.write("Daftar sampel data uji dari laporan[cite: 106]:")
+    st.write("Daftar sampel data uji dari laporan:")
     data_uji = {
         "Data": ["D1", "D2", "D11", "D13", "D30"],
         "Suhu": [5, 5, 22, 25, 27],
@@ -177,12 +176,12 @@ with tabs[1]:
 with tabs[2]:
     st.markdown("""
     ### Tentang Project
-    Aplikasi ini menggunakan **Metode Fuzzy Logic Mamdani** untuk menentukan apakah yogurt masih layak dimakan berdasarkan kondisi lingkungan (suhu) dan waktu (kadaluarsa)[cite: 21, 33].
+    Aplikasi ini menggunakan **Metode Fuzzy Logic Mamdani** untuk menentukan apakah yogurt masih layak dimakan berdasarkan kondisi lingkungan (suhu) dan waktu (kadaluarsa).
     
     **Variabel Input:**
-    - Suhu (0-30°C) [cite: 34]
-    - Sisa Hari (0-14 Hari) [cite: 34]
+    - Suhu (0-30°C) 
+    - Sisa Hari (0-14 Hari) 
     
     **Variabel Output:**
-    - Status (Layak, Hampir Basi, Basi) [cite: 34]
+    - Status (Layak, Hampir Basi, Basi)
     """)
