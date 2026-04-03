@@ -3,12 +3,12 @@ import pandas as pd
 
 # --- KONFIGURASI HALAMAN ---
 st.set_page_config(
-    page_title="YoguCheck - Tim 1 UNTAN",
+    page_title="Yogurt Check - Tim 1 Kecerdasan Buatan A",
     page_icon="🍦",
     layout="centered"
 )
 
-# --- STYLE CSS (Agar Tampilan Seperti Game & Cantik) ---
+# --- STYLE CSS ---
 st.markdown("""
     <style>
     .main {
@@ -19,13 +19,13 @@ st.markdown("""
         border-radius: 20px;
         height: 3em;
         background-color: #ffb7c5;
-        color: white;
+        color: #000000; /* Teks Hitam agar kontras */
         font-weight: bold;
         border: none;
     }
     .stButton>button:hover {
         background-color: #ff8fab;
-        color: white;
+        color: #000000; /* Tetap hitam saat di-hover */
     }
     .reportview-container .main .block-container {
         padding-top: 2rem;
@@ -83,7 +83,6 @@ def hitung_kelayakan(suhu, hari):
     h_sedang = mu_hari_sedang(hari)
     h_banyak = mu_hari_banyak(hari)
 
-    # Rule Evaluation (AND menggunakan MIN)
     # Skor z: Layak=10, Hampir Basi=50, Basi=100
     rules = [
         (min(h_sedikit, s_panas), 100), # R1
@@ -114,12 +113,12 @@ def hitung_kelayakan(suhu, hari):
         return z_result, "Sudah Basi", "🤮"
 
 # --- UI APLIKASI ---
-st.title("🍦 YoguCheck")
+st.title("🍦 Yogurt Check")
 st.caption("Sistem Kelayakan Yogurt Berbasis Fuzzy Logic - Tim 1 Sistem Informasi UNTAN")
 
-# Sidebar untuk Profile Tim
+# Sidebar
 with st.sidebar:
-    st.image("https://id.wikipedia.org/wiki/Berkas:Lambang_Universitas_Tanjungpura.png", width=100)
+    st.image("assets/Lambang_Universitas_Tanjungpura.png", width=100)    
     st.header("Profile Tim 1")
     st.markdown("""
     - **Regisha Sheren** (H1101241036)
@@ -131,7 +130,7 @@ with st.sidebar:
     st.info("Project Kecerdasan Buatan 2026")
 
 # Main Content
-tabs = st.tabs(["🎮 Cek Yogurt", "📊 Data Uji", "📝 Tentang"])
+tabs = st.tabs([" Cek Yogurt", " Data Uji", " Tentang"])
 
 with tabs[0]:
     st.subheader("Berapa suhu penyimpananmu?")
@@ -145,7 +144,6 @@ with tabs[0]:
     if st.button("Analisis Kelayakan"):
         z, status, emoji = hitung_kelayakan(input_suhu, input_hari)
         
-        # Animasi hasil sederhana
         st.balloons()
         
         col1, col2 = st.columns([1, 2])
