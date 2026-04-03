@@ -39,7 +39,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# --- LOGIKA FUZZY MAMDANI (SESUAI LAPORAN) ---
+# LOGIKA FUZZY MAMDANI
 def mu_suhu_dingin(x):
     if x <= 5: return 1.0
     if 5 < x < 10: return (10 - x) / (10 - 5)
@@ -115,7 +115,7 @@ def hitung_kelayakan(suhu, hari):
         emoji = "🤮"
     return z_result, status, emoji
 
-# --- UI APLIKASI ---
+# UI
 st.title("🍦 Yogurt Check")
 st.caption("Sistem Kelayakan Yogurt Berbasis Fuzzy Logic - Tim 1 Kecerdasan Buatan A")
 
@@ -167,7 +167,7 @@ with tabs[1]:
     st.subheader("Tabel Verifikasi Data Uji")
     st.write("Berikut adalah 30 data uji dari laporan untuk memverifikasi kebenaran sistem inferensi fuzzy.")
     
-    # Data lengkap 30 sampel sesuai laporan 
+    # Data lengkap 30 sampel laporan 
     data_lengkap = {
         "No": [f"D{i}" for i in range(1, 31)],
         "Suhu (°C)": [5, 5, 3, 8, 10, 15, 15, 12, 18, 20, 22, 26, 25, 28, 30, 4, 7, 10, 14, 18, 21, 24, 26, 2, 6, 11, 16, 19, 23, 27],
@@ -186,7 +186,6 @@ with tabs[1]:
     
     df_uji = pd.DataFrame(data_lengkap)
     
-    # Menampilkan tabel dengan gaya yang cantik
     st.dataframe(df_uji, use_container_width=True, hide_index=True)
     
     st.info("""
