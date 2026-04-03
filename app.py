@@ -165,7 +165,7 @@ with tabs[0]:
 
 with tabs[1]:
     st.subheader("Tabel Verifikasi Data Uji")
-    st.write("Berikut adalah 30 data uji dari laporan untuk memverifikasi kebenaran sistem inferensi fuzzy.")
+    st.write("Berikut adalah data perhitungan manual untuk memverifikasi kebenaran sistem inferensi fuzzy.")
     
     
 
