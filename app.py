@@ -191,7 +191,7 @@ with tabs[1]:
     
     st.info("""
     **Catatan Analisis:** Beberapa nilai z* pada tabel ini telah disesuaikan dengan hasil perhitungan sistem aplikasi untuk menjamin akurasi inferensi fuzzy 
-    dibandingkan dengan pembulatan pada hitung manual[cite: 104, 211].
+    dibandingkan dengan pembulatan pada hitung manual.
     """)
 
 with tabs[2]:
