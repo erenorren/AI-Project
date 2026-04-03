@@ -105,12 +105,15 @@ def hitung_kelayakan(suhu, hari):
     
     z_result = nominator / denominator
     
-    if z_result <= 30:
-        return z_result, "Layak Konsumsi", "😋"
-    elif z_result <= 70:
-        return z_result, "Hampir Basi", "😟"
+    if z_result < 30:
+        status = "Layak Konsumsi"
+        emoji = "😋"
+    elif 30 <= z_result < 70:
+        status = "Hampir Basi"
+        emoji = "😟"
     else:
-        return z_result, "Sudah Basi", "🤮"
+        status = "Sudah Basi"
+        emoji = "🤮"
 
 # --- UI APLIKASI ---
 st.title("🍦 Yogurt Check")
